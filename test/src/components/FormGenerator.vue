@@ -5,7 +5,7 @@
                :is="field.fieldType"
                :value="formData[field.name]"
                @input="updateForm(field.name, $event)"
-               v-bind="field">
+               :formfilled="formfilled">
     </component>
   </div>
 </template>
@@ -19,7 +19,7 @@ import RemarksInput from "./RemarksInput";
 export default {
   name: "FormGenerator",
   components: { NumberInput, SelectList, TextInput, RemarksInput },
-  props: ["schema", "value"],
+  props: ["schema","formfilled", "value"],
   data() {
     return {
       formData: this.value || {}

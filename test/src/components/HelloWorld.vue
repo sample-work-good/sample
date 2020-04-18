@@ -2,13 +2,17 @@
   <div>
     <h1>Form Generator</h1>
 
+  <form>
     <form-generator :schema="schema"
-                    v-model="formData">
+                    v-model="formData"
+                    :formfilled="formFilled">
     </form-generator>
+    <input type="submit">
+    </form>
 
     <p>
       Hello {{formData.title}} {{formData.firstName}} {{formData.lastName}}, I hear you are {{formData.age}} years old.
-    </p>
+      yor remarks are  {{formData.remarks}} </p>
   </div>
 </template>
 
@@ -23,6 +27,7 @@ export default {
       formData: {
         //firstName: "Evan"
       },
+      formFilled: 0,
       schema: [
         {
           fieldType: "SelectList",
@@ -31,6 +36,7 @@ export default {
           label: "Title",
           options: ["Mr", "Ms", "Mx", "Dr", "Madam", "Lord"],
           isMandatory: 0,
+          fieldValue: "Mx"
           
         },
         {
@@ -39,6 +45,7 @@ export default {
           label: "First Name",
           name: "firstName",
           isMandatory: 0,
+          fieldValue: "ajay",
         },
         {
           fieldType: "TextInput",
@@ -46,6 +53,7 @@ export default {
           label: "Last Name",
           name: "lastName",
           isMandatory: 0,
+          fieldValue: "Mathur",
         },
         {
           fieldType: "NumberInput",
@@ -53,7 +61,7 @@ export default {
           name: "age",
           label: "Age",
           isMandatory: 1,
-          minValue: 0
+          fieldValue: 35,
         },
         {
           fieldType: "RemarksInput",
@@ -61,7 +69,7 @@ export default {
           name: "remarks",
           label: "remarks/details",
           isMandatory: 0,
-          minValue: 0
+          fieldValue: " theses are my remarks ",
         }
       ]
     };

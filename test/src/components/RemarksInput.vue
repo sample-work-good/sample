@@ -4,7 +4,9 @@
 
     <textarea 
            :name="name"
-           :value="value"
+           :value=" formfilled == 0 ? value : fieldValue "
+           :disabled="formfilled == 1 ? true : false"
+           :required="(formfilled == 0) && (isMandatory == 1) ? true : false"
            @input="$emit('input',$event.target.value)"
            :placeholder="placeholder"></textarea>
 
@@ -13,6 +15,6 @@
 <script>
 export default {
   name: 'RemarksInput',
-  props: ['placeholder', 'label', 'name', 'value']
+  props: ['placeholder', 'label', 'name','isMandatory','formfilled', 'fieldValue', 'value']
 }
 </script>
