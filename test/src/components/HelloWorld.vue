@@ -33,7 +33,7 @@ export default {
           fieldType: "SelectList",
           name: "title",
           multi: false,
-          label: "Title",
+          label: "Select Title",
           options: ["Mr", "Ms", "Mx", "Dr", "Madam", "Lord"],
           isMandatory: 0,
           fieldValue: "Mx"

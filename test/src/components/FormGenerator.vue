@@ -1,13 +1,17 @@
 <template>
   <div>
-    <component v-for="(field, index) in schema"
-               :key="index"
-               :is="field.fieldType"
-               :value="formData[field.name]"
-               @input="updateForm(field.name, $event)"
-               v-bind="field"
-               :formfilled="formfilled">
-    </component>
+    <f7-list no-hairlines-md>
+      <f7-list-item>
+        <component v-for="(field, index) in schema"
+                  :key="index"
+                  :is="field.fieldType"
+                  :value="formData[field.name]"
+                  @input="updateForm(field.name, $event)"
+                  v-bind="field"
+                  :formfilled="formfilled">
+        </component>
+      </f7-list-item>
+    </f7-list>
   </div>
 </template>
 
