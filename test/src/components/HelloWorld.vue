@@ -30,25 +30,37 @@ export default {
           multi: false,
           label: "Title",
           options: ["Mr", "Ms", "Mx", "Dr", "Madam", "Lord"],
+          isMandatory: 0,
           
         },
         {
           fieldType: "TextInput",
           placeholder: " dummy first ",
           label: "First Name",
-          name: "firstName"
+          name: "firstName",
+          isMandatory: 0,
         },
         {
           fieldType: "TextInput",
           placeholder: " Ankit ",
           label: "Last Name",
-          name: "lastName"
+          name: "lastName",
+          isMandatory: 0,
         },
         {
           fieldType: "NumberInput",
           placeholder: " umar batao ",
           name: "age",
           label: "Age",
+          isMandatory: 1,
+          minValue: 0
+        },
+        {
+          fieldType: "RemarksInput",
+          placeholder: " remarks likho ",
+          name: "remarks",
+          label: "remarks/details",
+          isMandatory: 0,
           minValue: 0
         }
       ]

@@ -14,9 +14,11 @@
 import NumberInput from "./NumberInput";
 import SelectList from "./SelectList";
 import TextInput from "./TextInput";
+import RemarksInput from "./RemarksInput";
+
 export default {
   name: "FormGenerator",
-  components: { NumberInput, SelectList, TextInput },
+  components: { NumberInput, SelectList, TextInput, RemarksInput },
   props: ["schema", "value"],
   data() {
     return {
