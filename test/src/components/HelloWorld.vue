@@ -2,12 +2,13 @@
   <div>
     <h1>Form Generator</h1>
 
-  <form>
+  <form id="surveyform" @submit.prevent="handleSubmit">
     <form-generator :schema="schema"
                     v-model="formData"
                     :formfilled="formFilled">
     </form-generator>
-    <input type="submit">
+    <!-- input v-if="formFilled==0" type="submit"-->
+     <f7-input  type="submit" v-if="formFilled==0" ></f7-input>
     </form>
 
     <p>
@@ -60,7 +61,7 @@ export default {
           placeholder: " umar batao ",
           name: "age",
           label: "Age",
-          isMandatory: 1,
+          isMandatory: 0,
           fieldValue: 35,
         },
         {
@@ -73,6 +74,15 @@ export default {
         }
       ]
     };
-  }
+  },
+  methods: {
+    handleSubmit(event) {
+      // Send data to the server or update your stores and such.
+      // this.formFilled = 1;
+      event.preventDefault();
+      event.stopPropagation();
+      console.log("  handle form submit send a post message ", this.formData);
+    }
+  },
 };
 </script>

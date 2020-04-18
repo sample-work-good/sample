@@ -7,7 +7,7 @@
           :disabled="formfilled == 1 ? true : false"
           :required="(formfilled == 0) && (isMandatory == 1) ? true : false"
           @input="$emit('input',$event.target.value)" 
-          placeholder="placeholder" clear-button>
+          :placeholder="placeholder" clear-button>
     </f7-input>
     <!-- <input type="number" 
            :name="name"

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <f7-list no-hairlines-md>
+    <f7-list id="mylist" no-hairlines-md no-hairlines no-hairlines-between>
       <f7-list-item>
         <component v-for="(field, index) in schema"
                   :key="index"
@@ -38,3 +38,8 @@ export default {
   }
 };
 </script>
+<style>
+#mylist > ul {
+   list-style-type: none; /* Remove bullets */
+}
+</style>
