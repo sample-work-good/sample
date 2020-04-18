@@ -5,6 +5,7 @@
                :is="field.fieldType"
                :value="formData[field.name]"
                @input="updateForm(field.name, $event)"
+               v-bind="field"
                :formfilled="formfilled">
     </component>
   </div>
