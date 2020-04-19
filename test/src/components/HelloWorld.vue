@@ -66,7 +66,8 @@ export default {
           option_count : 0, 
           options: [],
           filled_value : "",
-          is_mandatory: 0,
+          is_mandatory: 1
+          ,
         },
         {
           title:"Ques3",
@@ -74,7 +75,7 @@ export default {
           option_count : 0,
           options: [],
           filled_value : "",
-          is_mandatory: 0,
+          is_mandatory: 1,
         },
         {
           title:"Ques 4",
@@ -82,7 +83,7 @@ export default {
            option_count : 0, 
            options: [],
            filled_value : "",
-           is_mandatory: 0,
+           is_mandatory: 1,
         },
         {
           title:"Ques5",
@@ -90,7 +91,7 @@ export default {
           option_count : 0, 
           options: [],
           filled_value : "",
-          is_mandatory: 0,
+          is_mandatory: 1,
         }
       ]}, 
     };

@@ -1,6 +1,6 @@
 <template>
   <div><br/>
-    <f7-label>{{title}}</f7-label>
+    <f7-label><span v-if="is_mandatory == 1" style="color:red">*</span> {{title}}</f7-label>
     <f7-input type="textarea" 
             :name ="title" 
             :disabled="formfilled == 1 ? true : false"
