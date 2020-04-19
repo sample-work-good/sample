@@ -1,13 +1,14 @@
 <template>
   <div><br/>
-    <f7-label>{{label}}</f7-label>
+    <f7-label>{{title}}</f7-label>
     <f7-input type="number" 
-          :name="name" 
-          :value="formfilled == 0 ? value : fieldValue" 
+          :name="title" 
+          :value="formfilled == 0 ? '' : filled_value" 
           :disabled="formfilled == 1 ? true : false"
-          :required="(formfilled == 0) && (isMandatory == 1) ? true : false"
+          :required="(formfilled == 0) && (is_mandatory == 1) ? true : false"
           @input="$emit('input',$event.target.value)" 
-          :placeholder="placeholder" clear-button>
+          placeholder="Please enter data(number)" 
+          :clear-button="formfilled == 0 ? true :false">
     </f7-input>
     <!-- <input type="number" 
            :name="name"
@@ -22,6 +23,6 @@
 <script>
 export default {
   name: 'NumberInput',
-  props: ['placeholder', 'label', 'name','isMandatory','formfilled','fieldValue', 'value']
+  props: ['title','is_mandatory','formfilled','filled_value']
 }
 </script>

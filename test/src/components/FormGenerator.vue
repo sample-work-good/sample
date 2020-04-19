@@ -4,12 +4,19 @@
       <f7-list-item>
         <component v-for="(field, index) in schema"
                   :key="index"
-                  :is="field.fieldType"
+                  :is="fieldArr[field.field_type-1].field"
+                  @input="updateForm(index, $event)"
+                  v-bind="field"
+                  :formfilled="formfilled">
+        </component>
+        <!-- <component v-for="(field, index) in schema"
+                  :key="index"
+                  :is="fieldArr[field.field_type-1]"
                   :value="formData[field.name]"
                   @input="updateForm(field.name, $event)"
                   v-bind="field"
                   :formfilled="formfilled">
-        </component>
+        </component> -->
       </f7-list-item>
     </f7-list>
   </div>
@@ -24,7 +31,7 @@ import RemarksInput from "./RemarksInput";
 export default {
   name: "FormGenerator",
   components: { NumberInput, SelectList, TextInput, RemarksInput },
-  props: ["schema","formfilled", "value"],
+  props: ["schema","formfilled", "value", "fieldArr"],
   data() {
     return {
       formData: this.value || {}
