@@ -1,4 +1,5 @@
 <template>
+
   <div>
     <h1>Form Generator</h1>
 
@@ -17,6 +18,7 @@
       Hello {{formData[0]}} {{formData[1]}} {{formData[2]}}, I hear you are {{formData[3]}} years old.
       yor remarks are  {{formData[4]}} </p>
   </div>
+
 </template>
 
 <script>
@@ -87,6 +89,54 @@ export default {
         },
         {
           title:"Ques5",
+          field_type: 2,
+          option_count : 0,
+          options: [],
+          filled_value : "",
+          is_mandatory: 1,
+        },
+        {
+          title:"Ques 6",
+          field_type: 3,
+           option_count : 0, 
+           options: [],
+           filled_value : "",
+           is_mandatory: 1,
+        },
+        {
+          title:"Ques7",
+          field_type: 2,
+          option_count : 0,
+          options: [],
+          filled_value : "",
+          is_mandatory: 1,
+        },
+        {
+          title:"Ques 8",
+          field_type: 3,
+           option_count : 0, 
+           options: [],
+           filled_value : "",
+           is_mandatory: 1,
+        },
+        {
+          title:"Ques9",
+          field_type: 2,
+          option_count : 0,
+          options: [],
+          filled_value : "",
+          is_mandatory: 1,
+        },
+        {
+          title:"Ques 10",
+          field_type: 3,
+           option_count : 0, 
+           options: [],
+           filled_value : "",
+           is_mandatory: 1,
+        },
+        {
+          title:"Ques11",
           field_type: 4,
           option_count : 0, 
           options: [],
