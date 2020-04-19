@@ -56,7 +56,7 @@ export default {
           field_type: 1,
           option_count : 6, 
           options: ["Mr", "Ms", "Mx", "Dr", "Madam", "Lord"],
-          filled_value : "Mr",
+          filled_value : "",
           is_mandatory: 0,
           
         },
@@ -71,9 +71,9 @@ export default {
         {
           title:"Ques3",
           field_type: 2,
-          option_count : 0, 
+          option_count : 0,
           options: [],
-          filled_value : "how r u",
+          filled_value : "",
           is_mandatory: 0,
         },
         {
@@ -93,23 +93,23 @@ export default {
           is_mandatory: 0,
         }
       ]}, 
-      
-
-
     };
   },
   methods: {
     handleSubmit(event) {
       // Send data to the server or update your stores and such.
-      // this.formFilled = 1;
-      // event.preventDefault();
       event.stopPropagation();
       console.log("  handle form submit send a post message ", this.formData);
     }
   },
     created() {
     console.log(" schema length =>", this.survey_info.field.length);
-    for( let x =0; x < this.survey_info.field.length; x++) {
+    for (let x =0; x < this.survey_info.field.length; x++) {
+      if (this.survey_info.field[x].field_type == 1) {
+        // Drop down default option[0] is set   
+        this.formData[x] = this.survey_info.field[x].options[0];
+        continue;        
+      }
       this.formData[x] = this.survey_info.field[x].filled_value;
     }
     console.log(" hello world created");
