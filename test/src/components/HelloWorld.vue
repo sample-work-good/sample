@@ -44,12 +44,10 @@ export default {
         {
           field : "RemarksInput"
         }],
-      
-      
       survey_info: {
         is_editable: true,
         survey_id:"123",
-        survey_name:"test",
+        survey_name:"Survey Name",
         survey_type:1, 
         field_count:0,
         field :[
