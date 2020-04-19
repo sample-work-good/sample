@@ -6,8 +6,10 @@
             :disabled="formfilled == 1 ? true : false"
             :required="(formfilled == 0) && (is_mandatory == 1) ? true : false"
             :value="formfilled == 0 ? '' : filled_value" 
-            @input="$emit('input', $event.target.value)" 
-            placeholder="Please Enter Remarks">      
+            @input="$emit('input', $event.target.value)"
+            placeholder="Please Enter Remarks"
+            @input:clear="$emit('input',$event.target.value)"
+            :clear-button="formfilled == 0 ? true :false">      
     </f7-input>
   </div>
 </template>
