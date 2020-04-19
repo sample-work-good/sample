@@ -4,19 +4,12 @@
       <f7-list-item>
         <component v-for="(field, index) in schema"
                   :key="index"
+                  :value="formData[index]"
                   :is="fieldArr[field.field_type-1].field"
                   @input="updateForm(index, $event)"
                   v-bind="field"
                   :formfilled="formfilled">
         </component>
-        <!-- <component v-for="(field, index) in schema"
-                  :key="index"
-                  :is="fieldArr[field.field_type-1]"
-                  :value="formData[field.name]"
-                  @input="updateForm(field.name, $event)"
-                  v-bind="field"
-                  :formfilled="formfilled">
-        </component> -->
       </f7-list-item>
     </f7-list>
   </div>

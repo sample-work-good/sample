@@ -9,14 +9,6 @@
             @input="$emit('input', $event.target.value)" 
             placeholder="Please Enter Remarks">      
     </f7-input>
-    <!-- <textarea 
-           :name="name"
-           :value=" formfilled == 0 ? value : fieldValue "
-           :disabled="formfilled == 1 ? true : false"
-           :required="(formfilled == 0) && (isMandatory == 1) ? true : false"
-           @input="$emit('input',$event.target.value)"
-           :placeholder="placeholder"></textarea> -->
-
   </div>
 </template>
 <script>
